@@ -6,7 +6,7 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -15,8 +15,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
 
+  gem 'therubyracer', :platforms => :ruby
+  gem "less-rails"
+  gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -42,7 +44,7 @@ gem 'refinerycms', '~> 2.0.0'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
-#  gem 'refinerycms-blog', '~> 2.0.0'
-#  gem 'refinerycms-inquiries', '~> 2.0.0'
-#  gem 'refinerycms-search', '~> 2.0.0'
-#  gem 'refinerycms-page-images', '~> 2.0.0'
+gem "refinerycms-blog", :git => "git://github.com/resolve/refinerycms-blog.git", :branch => "2-0-stable"
+  gem 'refinerycms-inquiries', '~> 2.0.0'
+  gem 'refinerycms-search', '~> 2.0.0'
+  gem 'refinerycms-page-images', '~> 2.0.0'
