@@ -7,7 +7,8 @@ gem 'rails', '3.2.12'
 
 gem 'mysql2'
 gem 'simple_form'
-
+gem 'stringex'
+gem "babosa", "~> 0.3.9"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -45,6 +46,6 @@ gem 'refinerycms', '~> 2.0.0'
 # Specify additional Refinery CMS Extensions here (all optional):
 gem 'refinerycms-i18n', '~> 2.0.0'
 gem "refinerycms-blog", :git => "git://github.com/resolve/refinerycms-blog.git", :branch => "2-0-stable"
-  gem 'refinerycms-inquiries', '~> 2.0.0'
-  gem 'refinerycms-search', '~> 2.0.0'
-  gem 'refinerycms-page-images', '~> 2.0.0'
+gem 'refinerycms-inquiries', '~> 2.0.0'
+gem 'refinerycms-search', '~> 2.0.0'
+gem 'refinerycms-page-images', '~> 2.0.0'

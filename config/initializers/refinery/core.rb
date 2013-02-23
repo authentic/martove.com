@@ -39,7 +39,7 @@ Refinery::Core.configure do |config|
   # config.ie6_upgrade_message_enabled = true
 
   # Show/hide browser update message in the backend
-  # config.show_internet_explorer_upgrade_message = false
+  config.show_internet_explorer_upgrade_message = true
 
   # Add extra tags to the wymeditor whitelist e.g. = {'tag' => {'attributes' => {'1' => 'href'}}} or just {'tag' => {}}
   # config.wymeditor_whitelist_tags = {}

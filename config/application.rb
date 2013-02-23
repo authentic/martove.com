@@ -38,6 +38,9 @@ module MartoveCom
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('martove', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
+    config.to_prepare do
+      Refinery.searchable_models = [Refinery::Page, Refinery::Blog]
+    end
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
