@@ -15,7 +15,9 @@ Refinery::Page.class_eval do
   end
 
   def ascii_menu_title
+    if menu_title
     self.menu_title.to_ascii
+      end
   end
   def ascii_browser_title
     self.browser_title.to_ascii
