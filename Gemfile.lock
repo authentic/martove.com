@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/refinery/refinerycms-search.git
+  revision: 4e5895b92f52b91754ad838dd481bc2865cf3b17
+  branch: 2-0-stable
+  specs:
+    refinerycms-search (2.0.0)
+      refinerycms-core (~> 2.0.4)
+
+GIT
   remote: git://github.com/resolve/refinerycms-blog.git
   revision: 7eaa7cf7e44c0affa307dd947c29aacb3e61a33b
   branch: 2-0-stable
@@ -176,8 +184,6 @@ GEM
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
       refinerycms-core (= 2.0.9)
-    refinerycms-search (2.0.0)
-      refinerycms-core (~> 2.0.4)
     refinerycms-settings (2.0.2)
       refinerycms-core (~> 2.0.1)
     routing-filter (0.3.1)
@@ -235,7 +241,7 @@ DEPENDENCIES
   refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
-  refinerycms-search (~> 2.0.0)
+  refinerycms-search (~> 2.0.0)!
   sass-rails (~> 3.2.3)
   simple_form
   stringex

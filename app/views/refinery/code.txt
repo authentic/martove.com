@@ -1,0 +1,85 @@
+_menu_branch.html.erb
+
+<% if ((children = menu_branch.children unless hide_children).present? &&
+        (!local_assigns[:menu_levels] || menu_branch.ancestors.length < local_assigns[:menu_levels])) -%>
+
+    <%
+       if !!local_assigns[:apply_css] and (classes = custom_menu_branch_css(local_assigns)).any?
+         css = "class='#{classes.join(' ')} parent'".html_safe
+       end
+
+    -%>
+    <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+      <%= link_to("#{menu_branch.title} <i></i>".html_safe, refinery.url_for("javascript:void(0)")) -%>
+      <ul>
+        <%= render :partial => '/refinery/menu_branch', :collection => children,
+                   :locals => {
+                           :apply_css => local_assigns[:apply_css],
+                           :hide_children => !!hide_children,
+                           :menu_levels => local_assigns[:menu_levels]
+                   } -%>
+      </ul>
+
+    </li>
+<% else -%>
+    <%
+       if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
+         css = "class='#{classes.join(' ')}'".html_safe
+       end
+
+    -%>
+    <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+      <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+    </li>
+<% end -%>
+
+
+
+
+
+
+
+ _menu.html.erb
+
+<%
+  # Collect the root items.
+  # ::Refinery::Menu is smart enough to remember all of the items in the original collection.
+  if (roots = local_assigns[:roots] || (collection ||= refinery_menu_pages).roots).present?
+    dom_id ||= 'main_menu'
+    css = [(css || 'menu clearfix')].flatten.join(' ')
+    hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
+-%>
+<nav id='<%= dom_id %>' class='<%= css %>'>
+  <ul class="accordmobile">
+    <%= render :partial => '/refinery/menu_branch', :collection => roots,
+               :locals => {
+                 :hide_children => hide_children,
+                 :sibling_count => (roots.length - 1),
+                 :menu_levels => local_assigns[:menu_levels],
+                 :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
+               } -%>
+  </ul>
+</nav>
+<% end -%>
+
+
+original
+   <%
+     if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
+       css = "class='#{classes.join(' ')}'".html_safe
+     end
+   -%>
+   <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
+   <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+     <% if ( (children = menu_branch.children unless hide_children).present? &&
+             (!local_assigns[:menu_levels] || menu_branch.ancestors.length < local_assigns[:menu_levels]) ) -%>
+       <ul class='clearfix'>
+         <%= render :partial => '/refinery/menu_branch', :collection => children,
+                    :locals => {
+                      :apply_css => local_assigns[:apply_css],
+                      :hide_children => !!hide_children,
+                      :menu_levels => local_assigns[:menu_levels]
+                    } -%>
+       </ul>
+     <% end -%>
+   </li>

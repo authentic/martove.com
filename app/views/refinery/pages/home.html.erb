@@ -1,1 +1,186 @@
-<%= render '/refinery/content_page' %>
+<script language="Javascript" src="http://script.pravoslavie.ru/icon.php?advanced=1&href=2&tmshift=-2"></script>
+<script language="Javascript" src="http://script.days.ru/calendar.php?advanced=1&target=1&hrams=0&hram=0&tmshift=-2"></script>
+<div id="page">
+<div class="container visible-phone hidden-tablet hidden-desktop">
+  <p class="right"><a class="btn btn-primary" href="#secondary-nav">Page Menu &nbsp;<i class="icon-align-justify"></i></a> <a class="btn" href="#tertiary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>
+  </div>
+<div class="hero-unit">
+  <div class="container"><%= raw(@page.content_for(:hero_unit)) %>
+  </div>
+</div>
+
+
+<div class="container clearfix" id="main-content">
+
+<div class="row-fluid holy-grail">
+
+
+  <div class=" span6 primary-column">
+    <div class="flexslider image-slider">  <ul class="slides">
+      <!--begin slide content inside each li tag-->
+      <li> <%=image_tag("7749108.jpg", :alt => "")  %>
+        <div class="caption no-border">
+          <p>This <b>wrapbootstrap</b> template is <a href="#" title="test link">crafted</a> with responsive, clean design. It has all sorts of useful and practical features, such as this handy content slider. </p>
+        </div>
+      </li>
+      <li> <%=image_tag("7749143.jpg", :alt => "")  %>
+        <div class="caption no-border">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </li>
+      <li> <%=image_tag("7749151.jpg", :alt => "")  %>
+        <div class="caption no-border">
+          <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+        </div>
+      </li>
+    </ul></div>
+
+  </div>
+  <section class="span3 sidebar secondary-column" id="secondary-nav">
+    <aside class="widget">
+      <h5 class="short_headline"><span>Календарь</span></h5>
+
+      <p><strong><script language="Javascript">print_day();</script> <span class="text-error"><script language="Javascript">print_holiday();</script></span></strong></p>
+      <p><em>
+        <script language="Javascript">print_post();</script>
+        <script language="Javascript">print_trapeza();</script>
+      </em></p>
+      <figure class="center"><script language="Javascript">print_img();</script><figcaption class="center"><script language="Javascript">print_podpis();</script></figcaption></figure>
+
+
+
+
+
+    </aside>
+    <aside class="widget clearfix">
+      <h5 class="short_headline"><span>Погода</span></h5>
+      <div class="center">
+        <div id="MeteoInformerWrap">
+          <script type="text/javascript" src="http://meteo.ua/var/informers.js"></script>
+          <script type="text/javascript">
+              makeMeteoInformer("http://meteo.ua/informer/get.php?cities=24947&w=110&lang=ru&rnd=1&or=vert&clr=19&dt=today&style=modern",110,438);
+          </script></div>   </div>
+    </aside>
+    <aside class="widget clearfix">
+      <h5 class="short_headline"><span>Say Something</span></h5>
+      <p><a href="contact.html"><img class="aligncenter" src="../demo/fotogrph-running-water.jpg" alt="" /></a>
+      <p>Image by <a title="CC BY 3.0 | Fotogrph.com" href="http://fotogrph.com/" target="blank">Fotogrph</a>. Think clicks-and-mortar. But don’t think all three at the same time. It seems unclear, but it’s entirely completely realistic! The infomediaries factor can be summed up in one word: killer. What do we integrate? Anything and everything, regardless of humbleness!</p>
+      <p class="right"><a href="#" class="btn btn-small btn-very-subtle">Learn More &rarr;</a></p>
+    </aside></section>
+
+  <section class="span3 sidebar tertiary-column" id="tertiary-nav">
+    <aside class="widget">
+      <h5 class="short_headline"><span>Статьи</span></h5>
+      <div class="sidebar-tabs">
+
+        <div class="panels">
+          <div id="tab-latest">
+            <ul class="blogposts clearfix">
+              <!--required class-->
+              <li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
+                <a href="blog-single.html">
+                  <p> Your budget for unleashing should be at least twice...</p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Split of a Second</a></h3>
+                <a href="blog-single.html">
+                  <p> Wingsuit World Champion Espen Fadnes and...</p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Latte Art</a></h3>
+                <a href="blog-single.html">
+                  <p> Creating art with latte coffee.
+                    Lorem ipsum dolor sit amet... </p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
+                <a href="blog-single.html">
+                  <p>senectus et netus et malesuada fames ac turpis egestas...</p>
+                </a> </li>
+            </ul>
+          </div>
+          <!-- close #tab-latest-->
+          <div id="tab-popular">
+            <!--begin tab-popular-->
+            <ul class="blogposts clearfix">
+              <!--required class-->
+              <li> <span class="date"> <span class="month">Jan</span> <span class="day">13</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">We frequently maximize turn-key infrastructures</a></h3>
+                <a href="blog-single.html">
+                  <p> Your budget for unleashing should be at least twice...</p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Nov</span> <span class="day">28</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Split of a Second</a></h3>
+                <a href="blog-single.html">
+                  <p> Wingsuit World Champion Espen Fadnes and...</p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Sep</span> <span class="day">18</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Latte Art</a></h3>
+                <a href="blog-single.html">
+                  <p> Creating art with latte coffee.
+                    Lorem ipsum dolor sit amet... </p>
+                </a> </li>
+              <li> <span class="date"> <span class="month">Mar</span> <span class="day">3</span> <span class="year">2012</span> </span>
+                <h3><a href="blog-single.html">Lorem ipsum dolor sit amet</a></h3>
+                <a href="blog-single.html">
+                  <p>senectus et netus et malesuada fames ac turpis egestas...</p>
+                </a> </li>
+            </ul>
+          </div>
+          <!-- close #tab-popular-->
+          <div id="tab-tags" class="tag-wrapper"> <a href="#" class="tag">business</a> <a href="#" class="tag">fun</a> <a href="#" class="tag">food</a> <a href="#" class="tag">design</a> <a href="#" class="tag">old</a> <a href="#" class="tag">recent</a> <a href="#" class="tag">junk</a> <a href="#" class="tag">important</a> <a href="#" class="tag">fonts</a> <a href="#" class="tag">css3</a> <a href="#" class="tag">php</a> <a href="#" class="tag">seamless</a> <a href="#" class="tag">complicated</a> </div>
+          <!-- close #tab-tags .tag-wrapper-->
+        </div>
+        <!--close .panels (all of them)-->
+      </div>
+      <!--close .sidebar-tabs-->
+    </aside>
+
+    <aside class="widget">
+      <h5 class="short_headline"><span>Stay Updated</span></h5>
+      <p>Sign up for our crispy newsletter. We won't share your email address.</p>
+      <div class="input-append">
+        <input type="email" placeholder="Email Address" class="span8" name="email" />
+        <button class="btn btn-primary">Sign Up</button>
+      </div>
+    </aside>
+
+
+    <aside class="widget">
+      <h5 class="short_headline"><span>Search</span></h5>
+      <form class="searchform" method="get">
+        <input type="search" class="span12" value="type and hit enter" onFocus="this.value=''" onBlur="this.value='type and hit enter'" />
+      </form>
+    </aside>
+
+    <aside class="widget">
+      <h5 class="short_headline"><span>Recent Images</span></h5>
+      <ul class="image-widget clearfix">
+        <li><a href="#"><img src="../demo/image-widget/1.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/2.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/3.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/4.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/5.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/6.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/7.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/8.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/9.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/10.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/11.png" alt="" /></a></li>
+        <li><a href="#"><img src="../demo/image-widget/12.png" alt="" /></a></li>
+      </ul>
+    </aside>
+
+    <aside class="widget clearfix">
+      <h5 class="short_headline"><span>Another Text Widget</span></h5>
+      <p><a href="contact.html"><img class="alignleft" src="../demo/fotogrph-relaxation-sm.jpg" alt="" /></a>
+      <p>Image by <a title="CC BY 3.0 | Fotogrph.com" href="http://fotogrph.com/" target="blank">Fotogrph</a>. According to Wikipedia: a paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea.</p>
+      <p class="right"><a href="#" class="btn btn-small btn-very-subtle">Learn More &rarr;</a></p>
+    </aside>
+
+  </section>
+</div>
+
+</div>
+</div>

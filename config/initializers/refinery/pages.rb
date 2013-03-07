@@ -6,7 +6,7 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  config.default_parts = ["Content Top", "Content", "Content Bottom"]
+  config.default_parts = ["Body", "Side Body"]
 
   # Configure whether to allow adding new page parts
   config.new_page_parts = true
@@ -41,11 +41,11 @@ Refinery::Pages.configure do |config|
 
   # config.layout_template_whitelist = ["application"]
 
-  # config.view_template_whitelist = ["home", "show"]
+  config.view_template_whitelist = ["home", "show"]
 
   # config.use_layout_templates = false
 
-  # config.use_view_templates = false
+  config.use_view_templates = true
 
   # config.page_title = {:chain_page_title=>false, :ancestors=>{:separator=>" | ", :class=>"ancestors", :tag=>"span"}, :page_title=>{:class=>nil, :tag=>nil, :wrap_if_not_chained=>false}}
 

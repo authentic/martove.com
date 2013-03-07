@@ -48,5 +48,5 @@ gem 'refinerycms', '~> 2.0.0'
 gem 'refinerycms-i18n', '~> 2.0.0'
 gem "refinerycms-blog", :git => "git://github.com/resolve/refinerycms-blog.git", :branch => "2-0-stable"
 gem 'refinerycms-inquiries', '~> 2.0.0'
-gem 'refinerycms-search', '~> 2.0.0'
+gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/refinery/refinerycms-search.git', :branch => '2-0-stable'
 gem 'refinerycms-page-images', '~> 2.0.0'

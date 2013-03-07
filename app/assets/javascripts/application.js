@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require twitter/bootstrap
+//= require ddsmoothmenu-min
+//= require jquery.dcjqaccordion.2.7.min
+//= require responsive-tables.js
+//= require jquery.flexslider-min
+//= require scripts
+
+
