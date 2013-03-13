@@ -12,4 +12,8 @@
  *= require bootstrap_and_overrides
  *= require style
  *= require martove
+ *= require socialicoregular
+ *= require font-awesome
+ *= require tabs-toggle
+ *= require blog
  */

@@ -1,4 +1,4 @@
-///** Smooth Navigational Menu- By Dynamic Drive DHTML code library: http://www.dynamicdrive.com
+//** Smooth Navigational Menu- By Dynamic Drive DHTML code library: http://www.dynamicdrive.com
 //** Script Download/ instructions page: http://www.dynamicdrive.com/dynamicindex1/ddlevelsmenu/
 //removed arrow images showing empty image holder
 //minified with: http://www.refresh-sf.com/yui/

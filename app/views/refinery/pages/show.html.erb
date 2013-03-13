@@ -3,9 +3,39 @@
       <% @page.images.each_with_index do |image, index| %>
           <li>
             <%= link_to image_tag(image.thumbnail("200x200#c").url), image.thumbnail("900x600").url %>
-            <span class='caption'><%=raw @page.caption_for_image_index(index) %></span>
+            <span class='caption'><%= raw @page.caption_for_image_index(index) %></span>
           </li>
       <% end %>
     </ul>
 <% end %>
-<%= render '/refinery/content_page' %>
+<div class="container visible-phone hidden-tablet hidden-desktop">
+  <p class="right">
+    <a class="btn btn-primary" href="#secondary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>
+</div>
+<div class="hero-unit">
+  <div class="container">
+    <h2><%= @page.title %></h2>
+  </div>
+
+</div>
+
+<div class="container clearfix" id="main-content">
+  <!--begin main content-->
+
+  <div class="row-fluid sidebar-right">
+    <!--begin row-fluid-->
+    <div class="span9 primary-column">
+      <%= raw @page.content_for(:body) %>
+    </div>
+    <!-- close span9 primary-column-->
+
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+
+      <%= raw @page.content_for(:side_body) %>
+
+    </section>
+
+  </div>
+
+</div>
+

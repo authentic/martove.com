@@ -15,6 +15,8 @@
 //= require twitter/bootstrap
 //= require ddsmoothmenu-min
 //= require jquery.dcjqaccordion.2.7.min
+//= require jquery.easytabs.min
+//= require slide-to-top-accordion-min
 //= require responsive-tables.js
 //= require jquery.flexslider-min
 //= require scripts

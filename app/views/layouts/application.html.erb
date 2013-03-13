@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <%= render '/refinery/html_tag' %>
-  <% site_bar = render('/refinery/site_bar', :head => true) -%>
-  <%= render '/refinery/head' %>
-  <body class="tall-logo">
-  <%= site_bar -%>
-    <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <%= render 'shared/preheader' -%>
-      <header id="header" class="header  clearfix">
-        <%= render '/refinery/header' -%>
-      </header>
-      <section id="page">
-        <%= yield %>
-      </section>
-      <footer>
-        <%= render '/refinery/footer' -%>
-      </footer>
-      <span class="backToTop"><a href="#top">back to top</a></span>
-    </div>
-    <%= render '/refinery/javascripts' %>
-  </body>
+<% site_bar = render('/refinery/site_bar', :head => true) -%>
+<%= render '/refinery/head' %>
+<body class="tall-logo">
+<%= site_bar -%>
+<%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+<div id="page_container">
+  <%= render 'shared/preheader' -%>
+  <header id="header" class="header  clearfix">
+    <%= render '/refinery/header' -%>
+  </header>
+  <section id="page">
+    <%= yield %>
+  </section>
+  <footer id="footer" class="clearfix">
+    <%= render '/refinery/footer' -%>
+  </footer>
+  <span class="backToTop"><a href="#top">back to top</a></span>
+</div>
+<%= render '/refinery/javascripts' %>
+</body>
 </html>

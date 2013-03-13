@@ -1,0 +1,58 @@
+<% if post.live? %>
+    <article class="entry-post" id="<%= dom_id(post) %>">
+      <header class="entry-header">
+        <h3 class="entry-title"><%= link_to post.title, refinery.blog_post_path(post) %>
+        </h3>
+
+        <div class="byline">
+          <i class="icon-pencil"></i> <%= "#{post.author.username}" if post.author.present? %>&nbsp;&nbsp;
+          <i class="icon-time"></i>
+          <abbr class="published" title="<%= Russian::strftime(post.published_at.to_date, "%A, %d %B %Y") %>">
+            <time datetime="<%= l post.published_at.to_date, :format => :default %>">
+              <%= Russian::strftime(post.published_at.to_date, " %d %b %Y") %>
+            </time>
+          </abbr>&nbsp;&nbsp;
+          <% if (categories = post.categories).any? %>
+              <i class="icon-comments-alt"></i>
+              <% if Refinery::Blog::Post.comments_allowed? %>
+                  <% if post.comments.approved.any? %>
+                      (<%= Russian::pluralize(post.comments.approved.count, "комментарий", "комментария", "комментариев") %>
+                      )
+                  <% else %>
+                      (<%= t('none', :scope => 'refinery.blog.shared.comments') %>)
+                  <% end %>
+              <% end %>
+              </div>
+              <div class="entry-meta">
+                <i class="icon-folder-open"></i>
+                <% if categories.count == 1 %> Категория:
+                <% else %> Категории:
+                <% end %>
+                <%= raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence({:two_words_connector => ", ", :last_word_connector => ", "}) %>
+          <% end %>
+          <% if (tags = post.tags).any? %>
+              &nbsp;&nbsp;<i class="icon-tags"></i>Теги: <%= raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence({:two_words_connector => ", ", :last_word_connector => ", "}) %>
+          <% end %>
+          </div>
+          </header>
+      <div class="entry-content">
+        <% if blog_post_teaser_enabled? %>
+            <%= blog_post_teaser(post).html_safe %>
+        <% else %>
+            <%= post.body.html_safe %>
+        <% end %>
+        <p class="more right"><%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), (refinery.blog_post_path(post) if blog_post_teaser_enabled?), :class => "btn btn-primary" %></p>
+      </div>
+      <footer class="entry-footer">
+        <span class="blog date">
+          <span class="day"><%= Russian::strftime(post.published_at.to_date, "%d") %></span>
+          <span class="month"> <%= Russian::strftime(post.published_at, "%b") %></span>
+          <span class="year"><%= Russian::strftime(post.published_at, "%Y") %>
+          </span>
+        </span>
+      </footer>
+    </article>
+<% end %>
+
+
+

@@ -1,4 +1,3 @@
-
 // You can take this refresh out as most people don't resize their page, this is for the demo
 /*================================================================*/
 /*	REFRESH IF WINDOW IS UNDER OR OVER 747 PX WIDE (removed 20px for scroll bar, that's why)
@@ -8,38 +7,38 @@ var limit = 747;
 
 function refresh() {
     ww = $(window).width();
-    var w =  ww<limit ? (location.reload(true)) :  ( ww>limit ? (location.reload(true)) : ww=limit );
+    var w = ww < limit ? (location.reload(true)) : ( ww > limit ? (location.reload(true)) : ww = limit );
 }
 
 var tOut;
-$(window).resize(function() {
+$(window).resize(function () {
     var resW = $(window).width();
     clearTimeout(tOut);
-    if ( (ww>limit && resW<limit) || (ww<limit && resW>limit) ) {
+    if ((ww > limit && resW < limit) || (ww < limit && resW > limit)) {
         tOut = setTimeout(refresh, 100);
     }
 });
 
 /*================================================================*/
-/*	TRIGGER EQUAL COLUMNS AT 767 px
+/*	TRIGGER EQUAL COLUMNS AT 767 px 
  /*================================================================*/
-$(window).load(function(){
+$(window).load(function () {
     if (document.documentElement.clientWidth > 767) { //if client width is greater than 767px load equal columns
 
-        (function($) {
+        (function ($) {
 
-            $.fn.eqHeights = function() {
+            $.fn.eqHeights = function () {
 
                 var el = $(this);
                 if (el.length > 0 && !el.data('eqHeights')) {
-                    $(window).bind('resize.eqHeights', function() {
+                    $(window).bind('resize.eqHeights', function () {
                         el.eqHeights();
                     });
                     el.data('eqHeights', true);
                 }
-                return el.each(function() {
+                return el.each(function () {
                     var curHighest = 0;
-                    $(this).children().each(function() {
+                    $(this).children().each(function () {
                         var el = $(this),
                             elHeight = el.height('auto').height();
                         if (elHeight > curHighest) {
@@ -49,7 +48,8 @@ $(window).load(function(){
                 });
             };
 
-            $('#equalHeights,#equalHeightsA,#equalHeightsB,#equalHeightsC,#equalHeightsD').eqHeights(); /*one time per page unless you make another id to add here */
+            $('#equalHeights,#equalHeightsA,#equalHeightsB,#equalHeightsC,#equalHeightsD').eqHeights();
+            /*one time per page unless you make another id to add here */
 
         }(jQuery));
     } // end if
@@ -59,10 +59,10 @@ $(window).load(function(){
 /*================================================================*/
 /*	FADE ALL EXCEPT HOVERED
  /*================================================================*/
-$(document).ready(function() {
-    $('.image-widget li').hover(function(){
+$(document).ready(function () {
+    $('.image-widget li').hover(function () {
         $(this).siblings().addClass('fade');
-    }, function(){
+    }, function () {
         $(this).siblings().removeClass('fade');
     });
 });
@@ -80,7 +80,7 @@ if (document.documentElement.clientWidth > 767) { //if client width is greater t
         showhidedelay: {showdelay: 300, hidedelay: 100} //set delay in milliseconds before sub menus appear and disappear, respectively
     })
 
-} // end if
+} // end if 
 
 
 /*================================================================*/
@@ -88,7 +88,7 @@ if (document.documentElement.clientWidth > 767) { //if client width is greater t
  /*================================================================*/
 if (document.documentElement.clientWidth < 767) { //if client width is less than 767px
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
 // accordion
         $('.accordmobile').dcAccordion({
@@ -99,35 +99,36 @@ if (document.documentElement.clientWidth < 767) { //if client width is less than
             speed: 'fast',
             showCount: false,
             autoExpand: false,
-            classExpand	 : 'parent'
+            classExpand: 'parent'
         });
 
     });	// end document ready
 
-} // end if
+} // end if 
 
 
 /*================================================================*/
 /*	MOBILE NAV TRIGGER
  /*================================================================*/
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $('.mobile_nav a').click(function(){
+    $('.mobile_nav a').click(function () {
         $('#main_menu').slideToggle(400);
-        $(this).toggleClass('active'); return false;
+        $(this).toggleClass('active');
+        return false;
     });
 
     /*================================================================*/
     /*	IPAD MENU ONLY
      /*================================================================*/
 
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         var deviceAgent = navigator.userAgent.toLowerCase();
         var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
-        if (agentID)   {
+        if (agentID) {
             if (document.documentElement.clientWidth > 767) {
-                $('#main_menu ul li.parent').click(function(event) {
+                $('#main_menu ul li.parent').click(function (event) {
                     $(this).children('.parent').hide();
                     $('ul', this).toggle();
                     $(this).toggleClass('foo');
@@ -153,13 +154,12 @@ $(document).ready(function(){
 /*================================================================*/
 /*	BACK TO TOP
  /*================================================================*/
-$(document).ready(function(){
+$(document).ready(function () {
 
-    if ( navigator.userAgent.indexOf('iPad','iPhone','iPod') == -1 )
-    {
+    if (navigator.userAgent.indexOf('iPad', 'iPhone', 'iPod') == -1) {
         // hide .backToTop first
         $(".backToTop").hide();
-        $(window).scroll(function(){
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.backToTop').fadeIn();
             } else {
@@ -167,7 +167,7 @@ $(document).ready(function(){
             }
         });
 
-        $('.backToTop').click(function(){
+        $('.backToTop').click(function () {
             $("html, body").animate({ scrollTop: 0 }, 800);
             return false;
         });
@@ -176,10 +176,10 @@ $(document).ready(function(){
 
     var deviceAgent = navigator.userAgent.toLowerCase();
     var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
-    if (agentID)   {
+    if (agentID) {
 
-        $('.backToTop').css({"position":"relative","clear":"both","margin":"0 auto","width":"100%","right":"auto","bottom":"auto"});
-        $('.backToTop a').css({"width":"100%"});
+        $('.backToTop').css({"position": "relative", "clear": "both", "margin": "0 auto", "width": "100%", "right": "auto", "bottom": "auto"});
+        $('.backToTop a').css({"width": "100%"});
 
     }// end IS ipad/iphone/ipod
 
@@ -189,9 +189,9 @@ $(document).ready(function(){
 /*	SEARCH
  /*================================================================*/
 if (document.documentElement.clientWidth < 767) {
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.search input').hide();
-        $('#search-trigger').click(function(){
+        $('#search-trigger').click(function () {
             $('.search input').slideToggle('fast').focus();
             $('.preheader .user, .preheader .phone').slideToggle('fast');
             $(this).toggleClass('active');
@@ -200,9 +200,9 @@ if (document.documentElement.clientWidth < 767) {
 }
 
 if (document.documentElement.clientWidth > 767) {
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.search input').hide();
-        $('#search-trigger').click(function(){
+        $('#search-trigger').click(function () {
             $('.search input').slideToggle('fast').focus();
             $(this).toggleClass('active');
         });
@@ -213,10 +213,10 @@ if (document.documentElement.clientWidth > 767) {
 /*	FORGOT PASSWORD (on login page)
  /*================================================================*/
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     $('.forgot-password').hide();
-    $('.forgotpw, .forgot-password .closeforgot').click(function(){
+    $('.forgotpw, .forgot-password .closeforgot').click(function () {
         $('.forgot-password').slideToggle('fast').focus();
     });
 });
@@ -226,7 +226,7 @@ $(document).ready(function(){
 /*	SIMPLE ACCORDION
  /*================================================================*/
 
-$(document).ready(function(){
+$(document).ready(function () {
 
 //  var allPanels = $('.s-accordion li.s-wrap div.s-content').hide();
 
@@ -236,12 +236,12 @@ $(document).ready(function(){
 //     if($(this).parent().next().is(':hidden'))
 //		{
 //     $(this).parent().next().slideDown();
-//		}
+//		} 
 //	 return false;
 //  });
 
     $('.s-accordion li.s-wrap div.s-content').hide();
-    $('.s-accordion li.s-wrap .trigger a').click(function(){
+    $('.s-accordion li.s-wrap .trigger a').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
             $(this).parent().next().slideUp();
@@ -257,13 +257,11 @@ $(document).ready(function(){
 });
 
 
-
-
 /*================================================================*/
 /*	TOOL TIPS and POP OVERS
  /*================================================================*/
 
-$(function(){
+$(function () {
 
     $('.titletip, ul.social li a').tooltip({});
     $(".detailsPop").popover({trigger: 'hover'});
@@ -273,11 +271,12 @@ $(function(){
 /*	SMOOTH SCROLL to ANCHOR (DIV WITH ID)
  /*================================================================*/
 
-$(document).ready(function($) {
+$(document).ready(function ($) {
 
-    $(".scrollto, .container.visible-phone.hidden-tablet.hidden-desktop .btn").click(function(event){
+    $(".scrollto, .container.visible-phone.hidden-tablet.hidden-desktop .btn").click(function (event) {
         event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);return false;
+        $('html,body').animate({scrollTop: $(this.hash).offset().top}, 800);
+        return false;
     });
 });
 
@@ -285,17 +284,17 @@ $(document).ready(function($) {
 /*================================================================*/
 /*	ADD ACTIVE CLASS TO MENU - DEMO only you can remove this if you want, your CMS should be set up so that the active class is added via php
  /*================================================================*/
-$(document).ready(function(){
+$(document).ready(function () {
     var path = location.pathname.substring(1);
-    if ( path )
+    if (path)
     //	$('#main_menu li a[href$="' + path + '"]').parents('li').addClass('active');
         $('#main_menu li a[href$="' + path + '"]').parents('li').last().addClass('active');
     $('#main_menu li a[href$="' + path + '"]').parents('li').first().addClass('active');
     $('#main_menu li a[href$="' + path + '"]').parent('li').addClass('active');
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     var path = location.pathname.substring(1);
-    if ( path )
+    if (path)
         $('ul.navigation li a[href$="' + path + '"]').parents('li').addClass('active');
 });
