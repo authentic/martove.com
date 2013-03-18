@@ -1,10 +1,15 @@
-<article class='blog_comment_message' id='<%= "comment-#{comment.to_param}" %>'>
-  <%= image_tag comment.avatar_url, :alt => comment.name, :class => 'avatar' %>
-  <%= simple_format auto_link(comment.message.to_s) %>
-  <footer class='blog_comment_author'>
-    <p>
-      <%= t('by', :scope => 'refinery.blog.posts.comments', :who => comment.name) %>,
-      <%= t('time_ago', :scope => 'refinery.blog.posts.comments', :time => time_ago_in_words(comment.created_at)) %>
-    </p>
+<li id='<%= "comment-#{comment.to_param}" %>'>
+  <footer class="comment-meta">
+    <a href="#" rel="external nofollow" title="<%= comment.name %>"> <%= image_tag comment.avatar_url, :alt => comment.name, :class => 'avatar' %></a>
+
+    <div class="comment-meta">
+      <span class="comment-author vcard"><cite title="<%= comment.name %>"><a href="#" title="<%= comment.name %>" class="url" rel="external nofollow"><%= comment.name %></a></cite></span>
+      <abbr class="published" title="<%= Russian::strftime(comment.created_at.to_date, "%A, %d %B %Y") %> (<%= t('time_ago', :scope => 'refinery.blog.posts.comments', :time => time_ago_in_words(comment.created_at)) %>)">
+        <time class="published" datetime="<%= l comment.created_at.to_date, :format => :default %>"> <%= Russian::strftime(comment.created_at.to_date, " %d %b %Y") %></time>
+      </abbr>
+    </div>
   </footer>
-</article>
+  <div class="text">
+    <%= simple_format auto_link(comment.message.to_s) %>
+  </div>
+</li>

@@ -14,24 +14,21 @@
           </abbr>&nbsp;&nbsp;
           <% if (categories = post.categories).any? %>
               <i class="icon-comments-alt"></i>
+
               <% if Refinery::Blog::Post.comments_allowed? %>
                   <% if post.comments.approved.any? %>
-                      (<%= Russian::pluralize(post.comments.approved.count, "комментарий", "комментария", "комментариев") %>
-                      )
+                      <%= link_to "(#{post.comments.approved.count} #{Russian::pluralize(post.comments.approved.count, "комментарий", "комментария", "комментариев")})", refinery.blog_post_path(post) << '#comments' %>
                   <% else %>
                       (<%= t('none', :scope => 'refinery.blog.shared.comments') %>)
                   <% end %>
               <% end %>
               </div>
               <div class="entry-meta">
-                <i class="icon-folder-open"></i>
-                <% if categories.count == 1 %> Категория:
-                <% else %> Категории:
-                <% end %>
+                <i class="icon-folder-open"></i><%= categories.count ==1 ? "Категория:" : "Категории:" %>
                 <%= raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence({:two_words_connector => ", ", :last_word_connector => ", "}) %>
           <% end %>
           <% if (tags = post.tags).any? %>
-              &nbsp;&nbsp;<i class="icon-tags"></i>Теги: <%= raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence({:two_words_connector => ", ", :last_word_connector => ", "}) %>
+              &nbsp;&nbsp;<i class="icon-tags"></i> <%= post.tags.count ==1 ? "Тег:" : "Теги:" %> <%= raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence({:two_words_connector => ", ", :last_word_connector => ", "}) %>
           <% end %>
           </div>
           </header>

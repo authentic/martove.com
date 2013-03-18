@@ -1,0 +1,28 @@
+<div class="hero-unit">
+  <div class="container">
+    <h1>Контакты</h1>
+  </div>
+</div>
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid reverse-order contact-page">
+    <p class="clearfix"></p>
+    <hr/>
+    <div class="span5">
+      <div id="map-canvas" style="width: 100%; height: 100%"></div>
+
+    </div>
+    <section class="span7">
+
+      <%= simple_form_for [refinery, :inquiries, @inquiry], :html => {:novalidate => true, :class => "form-vertical"} do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :name, :required => true, :label => 'Имя:', :autofocus => true, :input_html => {:class => "span10"} %>
+          <%= f.input :email, :required => true, :label => 'Эл. почта:', :input_html => {:class => "span10"} %>
+          <%= f.input :phone, :label => 'Телефон:', :input_html => {:class => "span10"} %>
+          <%= f.input :message, :input_html => {:rows => 3, :cols => "30", :class => "span10"}, :as => :text, :label => 'Сообщение:', :required => true %>
+          <%= f.button :submit, 'Отправить сообщение', :class => "btn btn-primary" %>
+          <hr><%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
+
+      <% end %>
+    </section>
+  </div>
+</div>

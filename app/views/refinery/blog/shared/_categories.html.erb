@@ -1,5 +1,6 @@
-<aside class="widget clearfix">
-  <% if @categories.any? %>
+<% if @categories.any? %>
+    <aside class="widget clearfix">
+
       <h5 class="short_headline"><span><%= t('.title') %></span></h5>
       <ul class="navigation" id='categories'>
         <% @categories.each do |category| %>
@@ -8,4 +9,5 @@
             </li>
         <% end %>
       </ul>
-  <% end %></aside>
+    </aside>
+<% end %>

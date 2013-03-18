@@ -1,10 +1,10 @@
 <%= render '/shared/visible_phone' %>
 <div class="hero-unit">
   <div class="container">
-    <h2>Архив за <%= t("date.standalone_month_names")[@archive_date.month] %> <%= @archive_date.year %></h2>
+    <h2><%= @category.title %></h2>
   </div>
-
 </div>
+
 <div class="container clearfix" id="main-content">
   <div class="row-fluid sidebar-right">
     <div class="span9 blog-summary primary-column">
@@ -12,15 +12,16 @@
       <% if @posts.any? %>
           <section id="blog_posts">
             <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+            <%= will_paginate @posts %>
           </section>
       <% else %>
-          <p><%= t('.no_blog_articles_posted', :date => @archive_date.strftime('%B %Y')) %></p>
+          <p>
+            <%= t('.no_posts') %>
+          </p>
       <% end %>
     </div>
     <section class="span3 sidebar secondary-column" id="secondary-nav">
-      <%= render :partial => '/refinery/blog/shared/body_content_right' %>
+      <%= render :partial => "/refinery/blog/shared/categories" %>
     </section>
   </div>
 </div>
-
-

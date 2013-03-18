@@ -227,7 +227,7 @@
 /* Entry Comments
 ================================================== */
 .entry-comments {
-    background: url(../images/5p.png);
+    background: url("5p.png");
     padding: 2% 3%;
 }
 
@@ -244,7 +244,7 @@
 .entry-comments li {
     padding: 10px 0 10px 0;
     margin: 0 0 10px 0;
-    background: url(../images/hr.png) 0 100% repeat-x;
+    background: url("hr.png") 0 100% repeat-x;
 }
 
 .entry-comments ul ul {

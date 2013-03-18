@@ -1,22 +1,30 @@
 <%= render '/shared/visible_phone' %>
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-detail primary-column">
+      <div id="show_blog_post">
+        <%= render 'post' %>
+      </div>
 
-<div id="show_blog_post">
-  <%= render 'post' %>
+      <% if Refinery::Blog::Post.comments_allowed? %>
+          <section id="view-comments" class="entry-comments clearfix">
+            <%= render 'comments' %>
+          </section>
+      <% end %>
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <%= render :partial => '/refinery/blog/shared/body_content_right' %>
+    </section>
+  </div>
+  <%= render :partial => "/refinery/content_page", :locals => {:remove_automatic_sections => true} %>
+
+  <% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+  <% content_for :javascripts do %>
+      <%# enable AJAX'd post nav at your own risk until html5 history API implemented. %>
+      <%= javascript_include_tag('refinery/blog/frontend') %>
+      <script src="http://w.sharethis.com/button/buttons.js"></script>
+      <script>stLight.options({publisher: '<%= Refinery::Blog.share_this_key %>'});</script>
+  <% end if Refinery::Blog::Post::ShareThis.enabled? %>
+
+
 </div>
-
-<% if Refinery::Blog::Post.comments_allowed? %>
-    <%= render 'comments' %>
-<% end %>
-
-
-<%= render :partial => '/refinery/blog/shared/body_content_right' %>
-
-<%= render :partial => "/refinery/content_page", :locals => {:remove_automatic_sections => true} %>
-
-<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
-<% content_for :javascripts do %>
-    <%# enable AJAX'd post nav at your own risk until html5 history API implemented. %>
-    <%#= javascript_include_tag('refinery/blog/frontend') %>
-    <script src="http://w.sharethis.com/button/buttons.js"></script>
-    <script>stLight.options({publisher: '<%= Blog::Post::ShareThis.key %>'});</script>
-<% end if Refinery::Blog::Post::ShareThis.enabled? %>

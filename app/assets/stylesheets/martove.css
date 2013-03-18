@@ -30,8 +30,8 @@ body.tall-logo nav.user {
 ================================================== */
 #logo, #logo img {
     /* width and height of logo desktop NON retina - this is the regular size logo */
-    width: 130px;
-    height: 130px;
+    width: 152px;
+    height: 152px;
 }
 
 #logo {
@@ -39,7 +39,7 @@ body.tall-logo nav.user {
     float: left;
     position: relative;
     margin-top: 18px;
-    background: url("logo.png") no-repeat;
+    background: url("logo1.png") no-repeat;
 }
 
 /* ie 7 fix*/
@@ -71,22 +71,22 @@ body.tall-logo nav.user {
 ================================================== */
 .tall-logo #logo, .tall-logo #logo img {
     /* - this is the tall size logo NON retina */
-    width: 130px;
-    height: 130px;
+    width: 152px;
+    height: 152px;
 }
 
 .tall-logo #logo {
     margin-top: 0;
     padding: 0;
-    top: -20px;
-    background-image: url("logo.png");
+    top: -44px;
+    background-image: url("logo1.png");
     background-color: transparent;
     background-position: 50% 100%;
     background-repeat: no-repeat;
 }
 
 .tall-logo .header {
-    height: 95px; /*height of navigation */
+    height: 65px; /*height of navigation */
 }
 
 .lt-ie8 .tall-logo .header {
@@ -130,12 +130,12 @@ body.tall-logo nav.user {
     height: 30px;
     position: relative;
     top: 3px;
-    background: url(../images/search.png) 0px 50% no-repeat;
+    background: url("search.png") 0px 50% no-repeat;
     cursor: pointer
 }
 
 .search #search-trigger.active {
-    background: url(../images/search.png) -30px 50% no-repeat;
+    background: url("search.png") -30px 50% no-repeat;
 }
 
 .search input {
@@ -270,8 +270,8 @@ body.tall-logo nav.user {
     border: none;
     color: #dfcea1;
     display: block;
-    height: 95px;
-    line-height: 95px;
+    height: 65px;
+    line-height: 65px;
     margin: 0 !important;
     padding: 0 12px;
     text-decoration: none;
@@ -286,7 +286,7 @@ body.tall-logo nav.user {
 #main_menu .active a,
 #main_menu a.selected,
 #main_menu li.parent.foo.active a /***! added foo.active a **/
- {
+  {
     background: #bf3604;
     color: #fcf8e5;
 }

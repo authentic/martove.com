@@ -1,19 +1,31 @@
-<% content_for :title, "#{t('.posts_tagged')} '#{@tag_name.titleize}'" %>
+<%= render '/shared/visible_phone' %>
+<div class="hero-unit">
+  <div class="container">
+    <h2>
+      <%= "Записи с тегом: &#8220;#{@tag_name.titleize}&#8221;".html_safe %>
+    </h2>
+  </div>
+</div>
 
-<% content_for :body_content_title, "#{t('.posts_tagged')} &#8220;#{@tag_name.titleize}&#8221;".html_safe -%>
 
-<% content_for :body do %>
-    <% if @posts.any? %>
-        <section id="blog_posts">
-          <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
-          <%= will_paginate @posts %>
-        </section>
-    <% else %>
-        <p><%= t('.no_blog_articles_yet') %></p>
-    <% end %>
-<% end %>
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-summary primary-column">
 
-<%= render :partial => '/refinery/blog/shared/body_content_right' %>
+      <% if @posts.any? %>
+          <section id="blog_posts">
+            <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+            <%= will_paginate @posts %>
+          </section>
+      <% else %>
+          <p><%= t('.no_blog_articles_yet') %></p>
+      <% end %>
 
-<%= render :partial => "/refinery/content_page" %>
-<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <%= render :partial => '/refinery/blog/shared/body_content_right' %>
+    </section>
+
+  </div>
+</div>
+

@@ -1,40 +1,31 @@
-<aside id="comments">
-  <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>
-  <% if (comments = @post.comments.approved).any? %>
+<h3> <%= (comments = @post.comments.approved).any? ? "#{@post.comments.approved.count} #{Russian::pluralize(@post.comments.approved.count, "комментарий", "комментария", "комментариев")}" : "Нет комментариев" %>
+  | <%= link_to "#{t('add', :scope => 'refinery.blog.posts.show.comments')}", "#comment-form", :class => "scrollto" %></h3>
+<% if (comments = @post.comments.approved).any? %>
+    <ul>
       <%= render :partial => "comment", :collection => comments %>
-  <% else %>
-      <p>
-        <%= t('none', :scope => 'refinery.blog.shared.comments') %>.
-      </p>
-  <% end %>
-
+<% end %>
+</ul>
+<div id="comment-form">
   <% flash.each do |key, value| %>
       <div id='flash' class="flash flash_<%= key %>">
         <%= value %>
       </div>
   <% end %>
+  <%= simple_form_for [refinery, :blog, @comment], :html => {:novalidate => true, :class => "form-vertical"} do |f| %>
 
-  <h2><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h2>
-  <%= form_for [refinery, :blog, @comment] do |f| %>
-      <%= render :partial => "/refinery/admin/error_messages",
-                 :locals => {
-                         :object => f.object,
-                         :include_object_name => true
-                 } %>
-      <div class='field'>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
-      <div class='field'>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
-      <div class='field message_field'>
-        <%= f.label :message %>
-        <%= f.text_area :message, :rows => 6 %>
-      </div>
-      <div class='field form-actions'>
-        <%= f.submit t('submit', :scope => 'refinery.blog.posts.show') %>
-      </div>
+      <%= f.error_notification %>
+      <h4>Добавить комментарий</h4>
+
+      <p>Необходимо ввести имя и адрес электронной почты. Ваш адрес электронной почты публиковаться и передаваться
+        третьим лицам не будет.
+        Комментарии модерируются. </p>
+
+      <p>* Обязательные поля.</p>
+      <%= f.input :name, :required => true, :label => 'Имя:', :autofocus => true, :input_html => {:class => "span10"} %>
+      <%= f.input :email, :required => true, :label => 'Эл. почта:', :input_html => {:class => "span10"} %>
+      <%= f.input :message, :input_html => {:rows => 3, :cols => "30", :class => "span10"}, :as => :text, :label => 'Сообщение:', :required => true %>
+      <%= f.button :submit, 'Добавить комментарий', :class => "btn btn-primary" %>
+
   <% end %>
-</aside>
+</div>
+

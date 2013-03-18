@@ -339,7 +339,7 @@ pre {
     padding: 3%;
     display: block;
     clear: both;
-    background: url(../images/5p.png) repeat;
+    background: url("5p.png") repeat;
     border: 0px;
 }
 
@@ -1038,7 +1038,7 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
 }
 
 .sidebar-left {
-    background-image: url(../images/rule.png);
+    background-image: url("rule.png");
     background-position: 23.5% 0;
     background-repeat: repeat-y;
 }
@@ -1049,7 +1049,7 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
 
 /****** right sidebar layout ******/
 .sidebar-right {
-    background-image: url(../images/rule.png);
+    background-image: url("rule.png");
     background-position: 76.5% 0;
     background-repeat: repeat-y;
 }
@@ -1107,7 +1107,7 @@ input[type="text"], input[type="password"], input[type="search"], input[type="em
 
 /******  ie support  ******/
 .lt-ie9 .widget {
-    background: url(../images/5p.png);
+    background: url("5p.png");
     padding: 15px;
 }
 
@@ -2209,7 +2209,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     ================================================== */
     .widget {
         margin: 0 0 1.5% 0 !important;
-        background: url(../images/5p.png);
+        background: url("5p.png");
         padding: 15px !important;
     }
 
