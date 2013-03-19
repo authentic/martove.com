@@ -13,7 +13,11 @@
       <% end %>
     </div>
     <section class="span3 sidebar secondary-column" id="secondary-nav">
-      <%= render :partial => '/refinery/blog/shared/body_content_right' %>
+      <%= render :partial => "/refinery/blog/shared/categories" %>
+      <%= render :partial => "/refinery/blog/shared/posts" %>
+      <%= render :partial => "/refinery/blog/shared/tags" %>
+      <%= blog_archive_widget %>
+
     </section>
   </div>
   <%= render :partial => "/refinery/content_page", :locals => {:remove_automatic_sections => true} %>

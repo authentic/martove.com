@@ -11,17 +11,21 @@ gem 'stringex'
 gem "babosa", "~> 0.3.9"
 gem "acts_as_indexed"
 gem 'russian', '~> 0.6.0'
+
+gem "gmaps4rails", "~> 1.5.6"
 # Gems used only for assets and not required
 # in production environments by default.
+
+
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem "twitter-bootstrap-rails"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
   gem 'therubyracer', :platforms => :ruby
   gem "less-rails"
-  gem "twitter-bootstrap-rails"
+
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -37,17 +41,17 @@ gem 'jquery-rails', '~> 2.0.0'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms', '~> 2.0.10'
 
 # Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n', '~> 2.0.0'
+gem "refinerycms-i18n", "~> 2.0.2"
 gem "refinerycms-blog", :git => "git://github.com/resolve/refinerycms-blog.git", :branch => "2-0-stable"
-gem 'refinerycms-inquiries', '~> 2.0.0'
+gem "refinerycms-inquiries", "~> 2.0.3"
 gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/refinery/refinerycms-search.git', :branch => '2-0-stable'
-gem 'refinerycms-page-images', '~> 2.0.0'
+gem "refinerycms-page-images", "~> 2.0.1"

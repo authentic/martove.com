@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require gmaps4rails/gmaps4rails.base.js.coffee
+//= require gmaps4rails/gmaps4rails.googlemaps.js.coffee
 //= require ddsmoothmenu-min
 //= require jquery.dcjqaccordion.2.7.min
 //= require jquery.easytabs.min
@@ -20,5 +22,6 @@
 //= require responsive-tables.js
 //= require jquery.flexslider-min
 //= require scripts
+
 
 
