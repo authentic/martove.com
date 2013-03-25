@@ -1,0 +1,10 @@
+<%- if items.present? -%>
+    <h3 class="short_headline"><span>Фотоальбом "<%= @gallery.title %>"</span></h3>
+    <ul>
+      <%= render items %>
+    </ul>
+    <hr>
+    <p class="more right clearfix"><%= link_to "К списку фотоальбомов", 'javascript:history.back()', :class => "btn btn-small btn-very-subtle" %></p>
+<%- end -%>
+
+

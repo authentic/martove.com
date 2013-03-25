@@ -77,10 +77,6 @@
           </div>
         </aside>
 
-        <aside class="widget clearfix">
-          <h5 class="short_headline"><span>Новости</span></h5>
-
-        </aside>
 
       </section>
 
@@ -124,6 +120,10 @@
         </div>
         </div>
         </aside>
+
+        <% @items = Refinery::News::Item.latest(5) %>
+        <%= render :partial => '/refinery/news/items/recent_posts' %>
+
       </section>
     </div>
 

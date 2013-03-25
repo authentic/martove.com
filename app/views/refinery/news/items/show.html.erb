@@ -1,0 +1,46 @@
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-detail primary-column">
+      <article class="entry-post">
+        <header class="entry-header">
+          <h1><%= @item.title %></h1>
+
+          <div class="byline">
+            <i class="icon-time"></i> Опубликовано
+            <abbr class="published" title="<%= Russian::strftime(@item.publish_date.to_date, "%A, %d %B %Y") %>">
+              <time datetime="<%= l(@item.publish_date, :format => :long) %>">
+                <%= Russian::strftime(@item.publish_date, " %d %b %Y, %H:%M") %>
+              </time>
+            </abbr>
+          </div>
+        </header>
+        <div class="entry-content">
+
+          <% if @item.source.present? %>
+              <p>
+                <small> Источник: <%= @item.source %></small>
+              </p>
+          <% end %>
+          <%= @item.body.html_safe %>
+          <p class="more right">
+            <%= link_to "К списку новостей", refinery.news_items_path, :class => "btn btn-primary" %>
+          </p></div>
+
+        <footer class="entry-footer">
+        <span class="blog date">
+          <span class="day"><%= Russian::strftime(@item.publish_date.to_date, "%d") %></span>
+          <span class="month"> <%= Russian::strftime(@item.publish_date, "%b") %></span>
+          <span class="year"><%= Russian::strftime(@item.publish_date, "%Y") %>
+          </span>
+        </span>
+        </footer>
+      </article>
+
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <%= render(:partial => 'recent_posts') %>
+      <%= render :partial => '/refinery/news/shared/body_content_right' %>
+    </section>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="hero-unit">
+  <div class="container">
+    <h2>Фотогалерея</h2>
+  </div>
+</div>
+<div class="container clearfix" id="main-content">
+
+  <div class="thumb-gallery row-fluid">
+
+    <%= render :partial => "refinery/portfolio/items/items", :locals => {:items => @items} %>
+    <%= render :partial => "galleries", :locals => {:galleries => @galleries} %>
+    <% content_for :stylesheets, stylesheet_link_tag('portfolio', 'fancyBox/source/jquery.fancybox', 'fancyBox/source/helpers/jquery.fancybox-buttons', 'fancyBox/source/helpers/jquery.fancybox-thumbs', 'hero-equal-thumb-gallery') %>
+    <% content_for :javascripts, javascript_include_tag('fancyBox/lib/jquery.mousewheel-3.0.6.pack', 'fancyBox/source/jquery.fancybox.pack', 'fancyBox/source/helpers/jquery.fancybox-media', 'fancyBox/source/helpers/jquery.fancybox-buttons', 'fancyBox/source/helpers/jquery.fancybox-thumbs', 'fancybox_init') %>
+
+
+  </div>
+</div>

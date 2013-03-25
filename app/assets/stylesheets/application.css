@@ -10,11 +10,15 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
- *= require style
  *= require socialicoregular
  *= require tabs-toggle
  *= require blog
+ *= require style
  *= require martove
  *= require gmaps4rails
+
+
+
+
 
  */

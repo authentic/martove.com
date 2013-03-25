@@ -1,0 +1,37 @@
+<article class="entry-post" id="<%= dom_id(item) %>">
+  <header class="entry-header">
+    <h3 class="entry-title"><%= link_to item.title, refinery.news_item_path(item) %>
+    </h3>
+
+    <div class="byline">
+      <i class="icon-time"></i> Опубликовано
+      <abbr class="published" title="<%= Russian::strftime(item.publish_date.to_date, "%A, %d %B %Y") %>">
+        <time datetime="<%= l(item.publish_date, :format => :long) %>">
+          <%= Russian::strftime(item.publish_date, " %d %b %Y, %H:%M") %>
+        </time>
+      </abbr>
+    </div>
+  </header>
+  <div class="entry-content">
+    <% if news_item_teaser_enabled? %>
+        <%= news_item_teaser(item) %>
+    <% else %>
+        <%= item.body.html_safe %>
+    <% end %>
+
+    <p class="more right">
+      <%= link_to "Читать дальше", (refinery.news_item_path(item) if news_item_teaser_enabled?), :class => "btn btn-primary" %>
+    </p>
+  </div>
+
+  <footer class="entry-footer">
+        <span class="blog date">
+          <span class="day"><%= Russian::strftime(item.publish_date.to_date, "%d") %></span>
+          <span class="month"> <%= Russian::strftime(item.publish_date, "%b") %></span>
+          <span class="year"><%= Russian::strftime(item.publish_date, "%Y") %>
+          </span>
+        </span>
+
+  </footer>
+
+</article>

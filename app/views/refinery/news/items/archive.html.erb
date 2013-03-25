@@ -1,0 +1,24 @@
+<div class="hero-unit">
+  <div class="container">
+    <h2>Архив за <%= t("date.standalone_month_names")[@archive_date.month] %> <%= @archive_date.year %></h2>
+  </div>
+</div>
+<div class="container clearfix" id="main-content">
+  <div class="row-fluid sidebar-right">
+    <div class="span9 blog-summary primary-column">
+      <% if @items.any? %>
+          <section id="news_items">
+            <%= render :partial => "/refinery/news/shared/item", :collection => @items %>
+          </section>
+      <% else %>
+          <p><%= t('.no_news_item_articles_posted', :date => @archive_date.strftime('%B %Y')) %></p>
+      <% end %>
+
+    </div>
+    <section class="span3 sidebar secondary-column" id="secondary-nav">
+      <% @items = Refinery::News::Item.latest(5) %>
+      <%= render :partial => '/refinery/news/items/recent_posts' %>
+      <%= render :partial => '/refinery/news/shared/body_content_right' %>
+    </section>
+  </div>
+</div>

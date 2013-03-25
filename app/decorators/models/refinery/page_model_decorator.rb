@@ -4,7 +4,9 @@ Refinery::Page.class_eval do
   private
 
   def ascii_title
-    self.title.to_ascii
+    if title
+      self.title.to_ascii
+    end
   end
 
   def ascii_meta_keywords

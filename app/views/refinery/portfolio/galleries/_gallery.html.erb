@@ -1,0 +1,20 @@
+<li id="<%= dom_id(gallery) %>">
+  <%= link_to refinery.portfolio_gallery_path(gallery), :class => "hover fancyme", "data-fancybox-group" => "gallery" do %>
+      <% if gallery.cover_image.present? %>
+          <%= image_fu gallery.cover_image.image,
+                       ::Refinery::Portfolio.cover_image_thumb_size,
+                       {:title => gallery.cover_image.title} %>
+          <div>
+            <h4><%= gallery.title %></h4>
+
+            <p>
+              <% if ::Refinery::Portfolio.display_gallery_text %>
+                  <%= raw gallery.description %>
+              <% end %></p>
+          </div>
+      <% end %>
+
+
+  <% end %>
+</li>
+

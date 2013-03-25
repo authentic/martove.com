@@ -1,0 +1,10 @@
+<aside class="widget clearfix">
+  <h5 class="short_headline"><span>Новости</span></h5>
+  <ul class="navigation" id='categories'>
+    <% @items.each do |item| %>
+        <li>
+          <%= link_to item.title, refinery.news_item_path(item) %>
+        </li>
+    <% end %>
+  </ul>
+</aside>
