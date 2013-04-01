@@ -2,9 +2,9 @@
   <h5 class="short_headline"><span>Архив новостей</span></h5>
   <nav>
     <ul class="navigation" id='categories'>
-      <% items.each do |item| %>
-          <li><%= news_item_archive_link(item) %></li>
-      <% end %>
+
+      <%= news_item_archive_links %>
+
     </ul>
   </nav>
 </aside>

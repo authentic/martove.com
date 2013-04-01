@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'http://gems.github.com'
 
 gem 'rails', '3.2.12'
 
@@ -11,7 +12,8 @@ gem 'stringex'
 gem "babosa", "~> 0.3.9"
 gem "acts_as_indexed"
 gem 'russian', '~> 0.6.0'
-
+gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
+gem "daemons", "~> 1.1.9"
 gem "gmaps4rails", "~> 1.5.6"
 # Gems used only for assets and not required
 # in production environments by default.

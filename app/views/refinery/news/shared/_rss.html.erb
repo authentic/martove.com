@@ -1,0 +1,20 @@
+<aside class="widget clearfix">
+  <h5 class="short_headline"><span>Телеканал ТВі</span></h5>
+  <nav>
+    <ul id="blogposts" class="blogposts clearfix">
+      <% for entry in FeedEntry.all(:limit => 10, :order => "published_at desc") %>
+
+          <li>
+            <span class="date"> <span class="month"><%= Russian::strftime(entry.published_at.to_date, "%e %b") %></span>
+              <span class="month"> <%= Russian::strftime(entry.published_at-4.hours, "%H:%M") %></span>
+              <span class="year"><%= Russian::strftime(entry.published_at, "%Y") %></span> </span>
+
+            <h3><%= link_to h(entry.name), entry.url %>
+            </h3>
+
+            <p><%= link_to h(entry.summary.html_safe), entry.url %></p></li>
+
+      <% end %>
+    </ul>
+  </nav>
+</aside>
