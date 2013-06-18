@@ -6,12 +6,24 @@
 <div class="container clearfix" id="main-content">
   <div class="row-fluid reverse-order contact-page">
     <p class="clearfix">
-      Уважаемый посетитель!
-
-      Мы благодарим вас за то, что вы зашли на эту страничку. Мы не оставляем без внимания ни одного сообщения. Если вы
-      хотите, чтобы сайт стал интереснее и полезнее, оставляйте свои замечания, предложения, пожелания.</p>
+      Уважаемый посетитель! Мы&nbsp;благодарим вас за&nbsp;то, что вы&nbsp;зашли на&nbsp;эту страничку. Мы&nbsp;не&nbsp;оставляем
+      без внимания ни&nbsp;одного сообщения. Если вы&nbsp;хотите, чтобы сайт стал интереснее и&nbsp;полезнее, присылайте
+      нам свои замечания, предложения, пожелания.</p>
     <hr/>
     <div class="span5">
+      <%= simple_form_for [refinery, :inquiries, @inquiry], :html => {:novalidate => true, :class => "form-vertical"} do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :name, :required => true, :label => 'Имя:', :autofocus => true, :input_html => {:class => "span10"} %>
+          <%= f.input :email, :required => true, :label => 'Адрес электронной почты:', :input_html => {:class => "span10"} %>
+          <%= f.input :phone, :label => 'Телефон:', :input_html => {:class => "span10"} %>
+          <%= f.input :message, :input_html => {:rows => 3, :cols => "30", :class => "span10"}, :as => :text, :label => 'Вопрос или сообщение:', :required => true %>
+          <p>* Поля, обязательные для заполнения</p>
+          <%= f.button :submit, 'Отправить', :class => "btn btn-primary" %>
+      <% end %></div>
+
+
+    <section class="span7">
+
 
       <%= gmaps({
                         "map_options" => {"provider" => "google", "provider_key" => "AIzaSyB6t6zMwN7kxDlps7x8lHYkzcs9u9qle8M", "type" => "HYBRID", "center_on_user" => true, "auto_zoom" => false, "zoom" => 13, "auto_adjust" => true, :language => 'ru', :hl => 'ru', :region => 'ru'},
@@ -22,22 +34,6 @@
         Село Мартовое, Печенежский район, Харьковская область, Украина<br>
       </address>
       <address><strong>Электронная почта:</strong> <a href="mailto:email@domain.com">contact@martove.com</a></address>
-    </div>
-
-
-    <section class="span7">
-
-      <%= simple_form_for [refinery, :inquiries, @inquiry], :html => {:novalidate => true, :class => "form-vertical"} do |f| %>
-          <%= f.error_notification %>
-          <%= f.input :name, :required => true, :label => 'Имя:', :autofocus => true, :input_html => {:class => "span10"} %>
-          <%= f.input :email, :required => true, :label => 'Адрес электронной почты:', :input_html => {:class => "span10"} %>
-          <%= f.input :phone, :label => 'Телефон:', :input_html => {:class => "span10"} %>
-          <%= f.input :message, :input_html => {:rows => 3, :cols => "30", :class => "span10"}, :as => :text, :label => 'Вопрос или сообщение:', :required => true %>
-          <p>* Поля, обязательные для заполнения</p>
-          <%= f.button :submit, 'Отправить', :class => "btn btn-primary" %>
-          <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
-
-      <% end %>
     </section>
     <hr>
   </div>

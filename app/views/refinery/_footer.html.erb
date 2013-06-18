@@ -114,7 +114,7 @@
       <li><%= t('.copyright', :year => Time.now.year,
                 :site_name => Refinery::Core.site_name) %></li>
       <li><a href="sitemap.html">Site Map</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
+      <li><%= link_to 'Политика конфиденциальности', "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %></li>
     </ul>
     <p>Все права защищены. Любое использование информации и материалов сайта возможно только
       при наличии прямой активной ссылки на источник.</p>

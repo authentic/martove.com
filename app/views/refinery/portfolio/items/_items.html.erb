@@ -1,6 +1,6 @@
 <%- if items.present? -%>
     <h3 class="short_headline"><span>Фотоальбом "<%= @gallery.title %>"</span></h3>
-    <ul>
+    <ul class="gallery lightbox four_col clearfix">
       <%= render items %>
     </ul>
     <hr>
