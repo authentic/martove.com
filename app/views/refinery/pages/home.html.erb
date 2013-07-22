@@ -3,39 +3,62 @@
 <div id="page">
   <div class="container visible-phone hidden-tablet hidden-desktop">
     <p class="right">
-      <a class="btn btn-primary" href="#secondary-nav">Page Menu &nbsp;<i class="icon-align-justify"></i></a>
-      <a class="btn" href="#tertiary-nav">Blog Menu &nbsp;<i class="icon-align-justify"></i></a></p>
+
+      <a class="btn" href="#tertiary-nav">Статьи&nbsp;<i class="icon-align-justify"></i></a></p>
   </div>
   <div class="hero-unit">
-    <div class="container"><%= raw(@page.content_for(:hero_unit)) %>
+    <div class="container">
+      <h2>Добро пожаловать на сайт села Мартовое!</h2>
     </div>
   </div>
+
+
   <div class="container clearfix" id="main-content">
 
+
+    <p>Здесь вы найдете интересную информацию о жизни небольшого украинского села в Печенежском районе Харьковской
+      области.</p>
+    <hr>
     <div class="row-fluid holy-grail">
       <div class=" span6 primary-column">
+
         <div class="flexslider image-slider">
           <ul class="slides">
-            <li> <%= image_tag("7749108.jpg", :alt => "") %>
+            <li> <%= image_tag("02.jpg", :alt => "") %>
               <div class="caption no-border">
-                <!--<p>This <b>wrapbootstrap</b> template is <a href="#" title="test link">crafted</a> with responsive,-->
-                <!--clean design. It has all sorts of useful and practical features, such as this handy content slider.-->
-                <!--</p>-->
+                <p>Мемориал погибшим в годы Великой Отечественной войны.
+                </p>
               </div>
             </li>
-            <li> <%= image_tag("7749143.jpg", :alt => "") %>
+            <li> <%= image_tag("01.jpg", :alt => "") %>
               <div class="caption no-border">
-                <!--<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut-->
-                <!--laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation-->
-                <!--ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>-->
+                <p>Мартовской Дом культуры.</p>
               </div>
             </li>
-            <li> <%= image_tag("7749151.jpg", :alt => "") %>
+            <li> <%= image_tag("03.jpg", :alt => "") %>
               <div class="caption no-border">
-                <!--<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est-->
-                <!--notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas-->
-                <!--humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum-->
-                <!--clari, fiant sollemnes in futurum.</p>-->
+                <p>Мартовская средняя школа имени Тараса Григорьевича Шевченка.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("08.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Памятник пионеру-герою Павлику Поддубному, отдавшему свою жизнь ради спасения группы советских
+                  разведчиков 03 февраля 1943г.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("05.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Печенежское водохранилище.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("06.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Плотина Печенежского водохранилища.</p>
+              </div>
+            </li>
+            <li> <%= image_tag("09.jpg", :alt => "") %>
+              <div class="caption no-border">
+                <p>Памятный знак жертвам Голодомора 1932-1933 г.г.</p>
               </div>
             </li>
           </ul>

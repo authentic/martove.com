@@ -10,13 +10,14 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
- *= require socialicoregular
- *= require tabs-toggle
- *= require blog
  *= require style
+ *= require tabs-toggle
+ *= require responsive-tables
+ *= require blog
+ *= require socialicoregular
  *= require martove
  *= require gmaps4rails
- *= require responsive-tables
+
 
 
 

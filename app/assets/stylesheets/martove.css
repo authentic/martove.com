@@ -79,7 +79,7 @@ body.tall-logo nav.user {
     margin-top: 0;
     padding: 0;
     top: -44px;
-    background-image: url("logo1.png");
+    background-image: url("tall-logo-desktop.png");
     background-color: transparent;
     background-position: 50% 100%;
     background-repeat: no-repeat;
@@ -286,7 +286,7 @@ body.tall-logo nav.user {
 #main_menu .active a,
 #main_menu a.selected,
 #main_menu li.parent.foo.active a /***! added foo.active a **/
-  {
+   {
     background: #bf3604;
     color: #fcf8e5;
 }
@@ -508,7 +508,7 @@ body.tall-logo nav.user {
 
     /* tall header for taller logo mobile */
     .tall-logo #logo {
-        background-image: url("logo-mob.png"); /*notice that this image changes on mobile */
+        background-image: url('tall-logo-mobile.png'); /*notice that this image changes on mobile */
         background-color: transparent !important;
         background-position: 0 0;
         position: relative;
@@ -522,7 +522,7 @@ body.tall-logo nav.user {
     }
 
     .tall-logo .header {
-        height: 60px;
+        height: 85px;
         margin-bottom: 30px;
     }
 
@@ -746,17 +746,17 @@ body.tall-logo nav.user {
     }
 
     .tall-logo #logo {
-        background-image: url(../images/retina/tall-logo-mobile_@2x.png);
-        -moz-background-size: 170px 185px; /*w & h of total image 72dpi image*/
-        -ie-background-size: 170px 185px;
-        -o-background-size: 170px 185px;
-        -webkit-background-size: 170px 185px;
-        background-size: 170px 185px;
+        background-image: url(tall-logo-mobile_@2x.png);
+        -moz-background-size: 170px 170px; /*w & h of total image 72dpi image*/
+        -ie-background-size: 170px 170px;
+        -o-background-size: 170px 170px;
+        -webkit-background-size: 170px 170px;
+        background-size: 170px 170px;
 
     }
 
     .search #search-trigger {
-        background-image: url(../images/retina/search_@2x.png);
+        background-image: url('search_@2x.png');
         -moz-background-size: 60px 30px; /*w & h of total ORIGINAL 72dpi image*/
         -ie-background-size: 60px 30px;
         -o-background-size: 60px 30px;
@@ -765,7 +765,7 @@ body.tall-logo nav.user {
     }
 
     #main_menu li.parent i {
-        background-image: url(../images/retina/menu_arrow_@2x.png);
+        background-image: url('menu_arrow_@2x.png');
         -moz-background-size: 20px 5px; /*w & h of total ORIGINAL 72dpi image*/
         -ie-background-size: 20px 5px;
         -o-background-size: 20px 5px;
@@ -786,17 +786,17 @@ body.tall-logo nav.user {
 @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-device-pixel-ratio: 2) {
 
     .tall-logo #logo {
-        background-image: url(../images/retina/tall-logo-mobile_@2x.png);
-        -moz-background-size: 78px 85px; /*w & h of total image 72dpi image*/
-        -ie-background-size: 78px 85px;
-        -o-background-size: 78px 85px;
-        -webkit-background-size: 78px 85px;
-        background-size: 78px 85px;
+        background-image: url(tall-logo-mobile_@2x.png);
+        -moz-background-size: 85px 85px; /*w & h of total image 72dpi image*/
+        -ie-background-size: 85px 85px;
+        -o-background-size: 85px 85px;
+        -webkit-background-size: 85px 85px;
+        background-size: 85px 85px;
 
     }
 
     .mobile_nav a span {
-        background-image: url(../images/retina/navtriggerbg_@2x.png);
+        background-image: url('navtriggerbg_@2x.png');
         -moz-background-size: 80px 40px; /*w & h of total sprite 72dpi image*/
         -ie-background-size: 80px 40px;
         -o-background-size: 80px 40px;

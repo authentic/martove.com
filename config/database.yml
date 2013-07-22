@@ -35,8 +35,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: martove.com_production
+  database: massanut_martove
   pool: 5
-  username: root
-  password:
+  username: massanut_martove
+  password: 5346Trevino
   socket: /var/run/mysqld/mysqld.sock

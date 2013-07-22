@@ -1,7 +1,5 @@
 Refinery::Page.class_eval do
   acts_as_indexed :fields => [:ascii_title, :ascii_meta_keywords, :ascii_meta_description, :ascii_menu_title, :ascii_browser_title, :ascii_all_page_part_content]
-  belongs_to :gallery, :class_name => "PortfolioEntry",
-             :foreign_key => :portfolio_entry_id
   private
 
   def ascii_title

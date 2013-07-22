@@ -46,7 +46,7 @@ table tbody tr td {
 }
 
 table tbody tr:nth-child(even) td {
-    background: url(../images/5p.png);
+    background: url('5p.png');
 }
 
 html.ie7 table {

@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/refinery/refinerycms-portfolio.git
+  revision: 5c528cfe2ebff8cae4b018c70b74dcc9e6674ac6
+  branch: 2-0-stable
+  specs:
+    refinerycms-portfolio (2.0.0)
+      awesome_nested_set (~> 2.1.0)
+      refinerycms-core (~> 2.0.0)
+
+GIT
   remote: git://github.com/refinery/refinerycms-search.git
   revision: 3b7a2fc5eefae004ed485eb40ab13c97baa5d397
   branch: 2-0-stable
@@ -18,15 +27,6 @@ GIT
       refinerycms-core (~> 2.0.3)
       refinerycms-settings (~> 2.0.1)
       seo_meta (~> 1.3.0)
-
-GIT
-  remote: git://github.com/resolve/refinerycms-portfolio.git
-  revision: ef456e627ef25e279921ce6a709c9653bf789b82
-  branch: 2-0-stable
-  specs:
-    refinerycms-portfolio (2.0.0)
-      awesome_nested_set (~> 2.1.0)
-      refinerycms-core (~> 2.0.0)
 
 GIT
   remote: https://github.com/pauldix/feedzirra.git

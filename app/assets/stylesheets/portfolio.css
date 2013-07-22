@@ -48,7 +48,7 @@
     padding: 15px 0 0 0;
     margin-top: 10px;
     clear: both;
-    background: url(../images/hr.png) 0 0 repeat-x;
+    background: url('hr.png') 0 0 repeat-x;
 }
 
 .portfolio-detail .related ul {
@@ -90,7 +90,7 @@
     width: 40px;
     height: 40px;
     float: right;
-    background: #dfcea1 url(../images/zoom-corner.png) 50% 50% no-repeat;
+    background: #dfcea1 url('zoom-corner.png') 50% 50% no-repeat;
 }
 
 /****** slider styles ******/
@@ -109,7 +109,7 @@
     border: none;
     text-indent: -9999px;
     display: block;
-    background: #976533 url(../images/sliderarrows.png) -280px 50% no-repeat;
+    background: #976533 url('sliderarrows.png') -280px 50% no-repeat;
 }
 
 .portfolio-detail #slider .flex-direction-nav .flex-prev {
@@ -201,7 +201,7 @@
     height: 100%;
     width: 100%;
     display: block;
-    background: url(../images/video-icon-small.png) center center no-repeat;
+    background: url('video-icon-small.png') center center no-repeat;
 }
 
 .portfolio-detail #carousel li.flex-active-slide span {
@@ -225,7 +225,7 @@
         height: 50px;
         text-indent: -9999px;
         display: block;
-        background: #976533 url(../images/sliderarrows.png) -80px 50% no-repeat;
+        background: #976533 url('sliderarrows.png') -80px 50% no-repeat;
     }
 
     .portfolio-detail #slider .flex-direction-nav .flex-prev {
@@ -267,7 +267,7 @@
     }
 
     .portfolio-detail #slider .flex-direction-nav a {
-        background-image: url(../images/retina/sliderarrows_@2x.png);
+        background-image: url('sliderarrows_@2x.png');
         -moz-background-size: 360px 100px;
         -ie-background-size: 360px 100px;
         -o-background-size: 360px 100px;
@@ -277,7 +277,7 @@
     }
 
     .portfolio-detail #slider .zoom-image {
-        background-image: url(../images/retina/zoom-corner_@2x.png);
+        background-image: url('zoom-corner_@2x.png');
         -moz-background-size: 25px 25px; /*w & h of original 72dpi image */
         -ie-background-size: 25px 25px;
         -o-background-size: 25px 25px;
@@ -286,7 +286,7 @@
     }
 
     .portfolio-detail #carousel li span {
-        background-image: url(../images/retina/video-icon-small_@2x.png);
+        background-image: url('video-icon-small_@2x.png');
         -moz-background-size: 30px 30px;
         -ie-background-size: 30px 30px;
         -o-background-size: 30px 30px;
