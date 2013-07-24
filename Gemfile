@@ -12,7 +12,7 @@ gem 'stringex'
 gem "babosa", "~> 0.3.9"
 gem "acts_as_indexed"
 gem 'russian', '~> 0.6.0'
-gem 'feedzirra', '0.1.3'
+gem "feedzirra", "~> 0.2.0.rc2"
 gem "daemons", "~> 1.1.9"
 gem "gmaps4rails", "~> 1.5.6"
 # Gems used only for assets and not required
