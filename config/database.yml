@@ -37,4 +37,4 @@ production:
   pool: 5
   username: massanut_martove
   password: 5346Trevino
-  socket: /var/lib/mysql/mysql.sock
+  socket:
