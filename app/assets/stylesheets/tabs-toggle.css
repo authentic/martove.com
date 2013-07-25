@@ -1,7 +1,7 @@
 /*	No JS styles
 ========================================================== */
 .no-js li.st-content-wrapper, .no-js .s-accordion li.s-wrap div.s-content {
-    overflow: visible ! !important;
+    overflow: visible !important;
     height: auto !important;
 }
 
@@ -9,7 +9,7 @@
     display: block !important;
     clear: both !important;
     visibility: visible !important;
-    overflow: visible ! !important;
+    overflow: visible !important;
 }
 
 .no-js .sidebar-tabs .panels .pane {
@@ -410,7 +410,7 @@ li.st-content-wrapper .st-content {
 @media print {
 
     li.st-content-wrapper, .s-accordion li.s-wrap div.s-content {
-        overflow: visible ! !important;
+        overflow: visible !important;
         height: auto !important;
     }
 
@@ -418,7 +418,7 @@ li.st-content-wrapper .st-content {
         display: block !important;
         clear: both !important;
         visibility: visible !important;
-        overflow: visible ! !important;
+        overflow: visible !important;
     }
 
     .sidebar-tabs .panels .pane {
