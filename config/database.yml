@@ -1,0 +1,31 @@
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: martove.com_development
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: martove.com_test
+  pool: 5
+  username: root
+  password:
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: massanut_martove
+  pool: 5
+  username: massanut_martove
+  password: 5346Trevino
+  socket: /var/lib/mysql/mysql.sock
