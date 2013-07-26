@@ -92,6 +92,6 @@ capybara-*html
 # vendor/extensions dummy applications.
 vendor/extensions/**/spec/dummy
 
-# marnove.com
+# martove.com
  config/database.yml
  .google-api.yaml
