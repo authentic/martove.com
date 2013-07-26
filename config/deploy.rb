@@ -57,7 +57,7 @@ namespace :deploy do
   desc "Symlinks the database.yml, and system folders"
   task :symlink_config_shared, :role => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    run "ln -s #{shared_path}/system/refinery #{release_path}/public/system/refinery"
+    #run "ln -s #{shared_path}/system/refinery #{release_path}/public/system/refinery"
 
   end
 
