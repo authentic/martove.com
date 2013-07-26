@@ -29,7 +29,7 @@ doc/app
 coverage
 
 # Public Uploads
-#public/system/*
+public/system/*
 public/themes/*
 
 # Public Cache
@@ -93,5 +93,5 @@ capybara-*html
 vendor/extensions/**/spec/dummy
 
 # marnove.com
-# config/database.yml
+config/database.yml
  .google-api.yaml
