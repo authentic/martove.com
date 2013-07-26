@@ -29,7 +29,7 @@ doc/app
 coverage
 
 # Public Uploads
-public/system/*
+#public/system/*
 public/themes/*
 
 # Public Cache
