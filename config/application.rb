@@ -14,14 +14,7 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
-module AssetsInitializers
-  class Railtie < Rails::Railtie
-    initializer "assets_initializers.initialize_rails",
-                :group => :assets do |app|
-      require "#{Rails.root}/config/initializers/load_config.rb"
-    end
-  end
-end
+
 module MartoveCom
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
