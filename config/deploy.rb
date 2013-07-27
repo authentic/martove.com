@@ -74,16 +74,8 @@ namespace :deploy do
       run "touch #{File.join(shared_path, 'log', 'production.log')}"
     end
   end
-#desc "build missing paperclip styles"
-#task :build_missing_paperclip_styles, :roles => :app do
-#  run "cd #{release_path}; RAILS_ENV=production bundle exec rake paperclip:refresh:missing_styles"
-#end
-#
-#desc "Sync the public/ckeditor_assets directory."
-#task :assets do
-#  system "rsync -vr --exclude='.DS_Store' public/ckeditor_assets #{user}@#{application}:#{shared_path}/"
-#end
+
 end
-after 'deploy:update_code', 'deploy:symlink_system' #, 'create_production_log'
+after 'deploy:update_code', 'deploy:symlink_system'
 
 before 'bundle:install', 'deploy:symlink_config'

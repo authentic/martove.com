@@ -19,6 +19,7 @@
 //= require jquery.dcjqaccordion.2.7.min
 //= require jquery.easytabs.min
 //= require slide-to-top-accordion-min
+//= require jquery.easing-1.3.min
 //= require jquery.flexslider-min
 //= require responsive-tables.js
 //= require scripts
