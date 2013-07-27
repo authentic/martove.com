@@ -65,7 +65,7 @@ MartoveCom::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.assets.precompile += ['portfolio.css']
-  config.assets.precompile += ['jquery.fancybox.css']
+
   config.assets.precompile += ['jquery.fancybox-buttons.css']
   config.assets.precompile += ['jquery.fancybox-thumbs.css']
   config.assets.precompile += ['hero-equal-thumb-gallery.css']
@@ -77,5 +77,5 @@ MartoveCom::Application.configure do
   config.assets.precompile += ['jquery.fancybox-buttons.js']
   config.assets.precompile += ['jquery.fancybox-thumbs.js']
   config.assets.precompile += ['fancybox_init.js']
-
+  config.assets.precompile += ['jquery.fancybox.css']
 end
