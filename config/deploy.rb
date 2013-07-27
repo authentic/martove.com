@@ -54,9 +54,15 @@ namespace :deploy do
 #############################################################
 #	Symlink tasks
 #############################################################
-  desc "Symlinks the database.yml, and system folders"
-  task :symlink_config_shared, :role => :app do
+  desc "Symlinks the database.yml"
+  task :symlink_config, :role => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+
+
+  end
+
+  desc "Symlinks system folders"
+  task :symlink_system, :role => :app do
     run "ln -s #{shared_path}/system/refinery #{release_path}/public/system/refinery"
 
   end
@@ -78,5 +84,6 @@ namespace :deploy do
 #  system "rsync -vr --exclude='.DS_Store' public/ckeditor_assets #{user}@#{application}:#{shared_path}/"
 #end
 end
-after 'deploy:update_code', 'deploy:symlink_config_shared' #, 'create_production_log'
+after 'deploy:update_code', 'deploy:symlink_system' #, 'create_production_log'
 
+before 'bundle:install', 'deploy:symlink_config'
