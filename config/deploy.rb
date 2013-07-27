@@ -61,11 +61,11 @@ namespace :deploy do
 
   end
 
-  desc "Symlinks system folders"
-  task :symlink_system, :role => :app do
-    run "ln -nfs #{shared_path}/system/refinery #{release_path}/public/system/refinery"
-
-  end
+  #desc "Symlinks system folders"
+  #task :symlink_system, :role => :app do
+  #  run "ln -nfs #{shared_path}/system/refinery #{release_path}/public/system/refinery"
+  #
+  #end
 
   desc "Creates the production log if it does not exist"
   task :create_production_log do
@@ -76,6 +76,6 @@ namespace :deploy do
   end
 
 end
-after 'deploy:update_code', 'deploy:symlink_system'
+#after 'deploy:update_code', 'deploy:symlink_system'
 
 before 'bundle:install', 'deploy:symlink_config'
