@@ -68,7 +68,7 @@ GEM
     babosa (0.3.11)
     bcrypt-ruby (3.1.1)
     builder (3.0.4)
-    capistrano (2.15.5)
+    capistrano (2.14.2)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -279,7 +279,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_indexed
   babosa (~> 0.3.9)
-  capistrano
+  capistrano (~> 2.14.2)
   coffee-rails (~> 3.2.1)
   daemons (~> 1.1.9)
   feedzirra (~> 0.2.0.rc2)
