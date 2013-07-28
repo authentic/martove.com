@@ -8,7 +8,7 @@
   <div class="thumb-gallery row-fluid">
     <%= render 'refinery/portfolio/items/items', :items => @items %>
     <%= render 'galleries', :galleries => @galleries %>
-    <% content_for :javascripts, javascript_include_tag('jquery.isotope.min', 'isotope_custom.js', 'fancyBox/lib/jquery.mousewheel-3.0.6.pack', 'fancyBox/source/jquery.fancybox.pack', 'fancyBox/source/helpers/jquery.fancybox-media', 'fancyBox/source/helpers/jquery.fancybox-buttons', 'fancyBox/source/helpers/jquery.fancybox-thumbs', 'fancybox_init') %>
+    <% content_for :javascripts, javascript_include_tag('jquery.isotope.min', 'isotope_custom', 'jquery.fancybox', 'jquery.fancybox.pack', 'jquery.fancybox-buttons', 'jquery.fancybox-media', 'jquery.fancybox-thumbs', 'fancybox_init', 'jquery.mousewheel-3.0.6.pack') %>
 
   </div>
 </div>
