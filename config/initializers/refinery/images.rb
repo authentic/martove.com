@@ -11,10 +11,10 @@ Refinery::Images.configure do |config|
   # config.pages_per_dialog_that_have_size_options = 12
 
   # Configure how many images per page should be displayed in the list of images in the admin area
-  # config.pages_per_admin_index = 20
+  config.pages_per_admin_index = 30
 
   # Configure image sizes
-  config.user_image_sizes = {:thumb => "60x60", :small => "110x110>", :medium => "300x225>", :large => "450x375>", }
+  config.user_image_sizes = {:thumb => "60x60", :small => "110x110>", :medium => "300x225>", :large => "450x375>", :super_large => "600x465"}
 
   # Configure white-listed mime types for validation
   # config.whitelisted_mime_types = ["image/jpeg", "image/png", "image/gif", "image/tiff"]
@@ -23,7 +23,7 @@ Refinery::Images.configure do |config|
   # config.image_views = [:grid, :list]
 
   # Configure default image view
-  # config.preferred_image_view = :grid
+  config.preferred_image_view = :grid
 
   # Configure S3 (you can also use ENV for this)
   # The s3_backend setting by default defers to the core setting for this but can be set just for images.
