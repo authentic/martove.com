@@ -431,7 +431,7 @@
     }
 
     #fancybox-buttons a {
-        background-image: url(helpers/fancybox_buttons_@2x.png);
+        background-image: url(fancybox_buttons_@2x.png);
         -moz-background-size: 90px 90px;
         -ie-background-size: 90px 90px;
         -o-background-size: 90px 90px;

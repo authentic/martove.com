@@ -1,16 +1,3 @@
-@import url('socialicoregular.css');
-    /*social font*/
-@import url('hero-equal-thumb-gallery.css');
-    /* equal height hero columns / thumbnail gallery css */
-@import url('responsive-tables.css');
-    /*responsive table */
-@import url('portfolio.css');
-    /*portfolio */
-@import url('gallery-folio-masonry.css');
-    /*isotope/masonry/grid css */
-@import url('../js/fancybox/source/jquery.fancybox.css');
-
-/*combined buttons, thumbs and base fancybox*/
 /*	main container(s)
 ================================================================= */
 .container {
