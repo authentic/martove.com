@@ -64,5 +64,6 @@ MartoveCom::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  config.assets.precompile << %w{'jquery.isotope.min.js' 'isotope_custom.js' 'jquery.mousewheel-3.0.6.pack.js' 'jquery.fancybox.pack.js' 'jquery.fancybox-media.js' 'fancybox_init.js' 'jquery.fancybox-thumbs.js' 'jquery.fancybox-buttons.js'}
+  config.assets.precompile += ['jquery.isotope.min.js', 'isotope_custom.js', 'jquery.mousewheel-3.0.6.pack.js', 'jquery.fancybox.pack.js', 'jquery.fancybox-media.js', 'fancybox_init.js', 'jquery.fancybox-thumbs.js', 'jquery.fancybox-buttons.js']
+
 end
