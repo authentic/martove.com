@@ -36,6 +36,11 @@ set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
+############################################################
+# Daemons
+###########################################################
+_cset :daemons, [:dameon_name]
+
 after 'deploy', 'deploy:cleanup'
 
 namespace :deploy do
@@ -81,6 +86,27 @@ namespace :deploy do
       run_locally "bundle exec rake assets:precompile RAILS_ENV=development"
       find_servers_for_task(current_task).each do |server|
         run_locally "rsync -vr  --exclude='.DS_Store' --rsh 'ssh -p #{ssh_options[:port]}' public/assets  #{user}@a2s76.a2hosting.com:#{shared_path}/"
+      end
+    end
+  end
+
+  daemons_per_role = daemons.is_a?(Array) ? {:app => daemons} : daemons
+
+  daemons_per_role.each do |role, daemons|
+    daemons.each do |daemon|
+      namespace daemon do
+        %w[start stop status].each do |command|
+          desc "#{daemon} #{command}"
+          task command, :roles => [role] do
+            run "cd #{current_path};RAILS_ENV=#{rails_env} bundle exec script/#{daemon}_daemon #{command}"
+          end
+        end
+
+        desc "#{daemon} restart"
+        task :restart, :roles => [role] do
+          send(daemon).stop
+          send(daemon).start
+        end
       end
     end
   end
