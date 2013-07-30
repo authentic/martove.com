@@ -44,7 +44,7 @@ gem 'jquery-rails', '~> 2.0.0'
 
 # Deploy with Capistrano
 gem 'capistrano', '~> 2.14.2'
-
+gem 'capo'
 # To use debugger
 # gem 'debugger'
 

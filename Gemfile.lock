@@ -74,6 +74,9 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capo (0.9.2)
+      capistrano (>= 2.6.0)
+      git
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -103,6 +106,7 @@ GEM
       sax-machine (~> 0.2.0.rc1)
     filters_spam (0.3)
     friendly_id (4.0.9)
+    git (1.2.5)
     globalize3 (0.3.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -279,6 +283,7 @@ DEPENDENCIES
   acts_as_indexed
   babosa (~> 0.3.9)
   capistrano (~> 2.14.2)
+  capo
   coffee-rails (~> 3.2.1)
   daemons (~> 1.1.9)
   feedzirra (~> 0.2.0.rc2)
