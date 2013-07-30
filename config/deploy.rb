@@ -63,7 +63,7 @@ namespace :deploy do
 
   desc "Symlinks system folders"
   task :symlink_system, :role => :app do
-    run "ln -nfs #{shared_path}/system/refinery/images #{release_path}/public/system/refinery/images"
+    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
   end
 
 
