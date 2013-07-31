@@ -6,7 +6,7 @@
 
           <li>
             <span class="date"> <span class="month"><%= Russian::strftime(entry.published_at.to_date, "%e %b") %></span>
-              <span class="month"> <%= Russian::strftime(entry.published_at-4.hours, "%H:%M") %></span>
+              <span class="month"> <%= Russian::strftime(entry.published_at+3.hours, "%H:%M") %></span>
               <span class="year"><%= Russian::strftime(entry.published_at, "%Y") %></span> </span>
 
             <h3><%= link_to h(entry.name), entry.url %>

@@ -74,39 +74,6 @@ namespace :deploy do
       run "touch #{File.join(shared_path, 'log', 'production.log')}"
     end
   end
-
-  task :restart_daemons, :roles => :app do
-    ##################################################
-    ###### Begin sets
-
-    set :daemons, [:rss]
-
-###### End sets
-##################################################
-
-    daemons_per_role = daemons.is_a?(Array) ? {:app => daemons} : daemons
-
-    daemons_per_role.each do |role, daemons|
-      daemons.each do |daemon|
-        namespace daemon do
-          %w[start stop status].each do |command|
-            desc "#{daemon} #{command}"
-            task command, :roles => [role] do
-              run "cd #{current_path};RAILS_ENV=#{rails_env} bundle exec lib/daemons/#{daemon}_ctl #{command}"
-            end
-          end
-
-          desc "#{daemon} restart"
-          task :restart, :roles => [role] do
-            send(daemon).stop
-            send(daemon).start
-          end
-        end
-      end
-    end
-
-  end
-
   namespace :assets do
     desc "Precompile assets on local machine and upload them to the server."
     task :precompile, roles: :web, except: {no_release: true} do
@@ -116,7 +83,15 @@ namespace :deploy do
       end
     end
   end
+#task :stop_daemons, :roles=> :app do
+#  run "cd #{current_path};RAILS_ENV=production bundle exec lib/daemons/rss_ctl stop"
+#end
+  task :start_daemons, :roles => :app do
+    run "cd #{current_path};RAILS_ENV=production bundle exec lib/daemons/rss_ctl start"
+  end
+
 end
 after 'deploy:update_code', 'deploy:symlink_system'
 before 'bundle:install', 'deploy:symlink_config'
-after 'deploy', 'deploy:restart_daemons'
+after 'deploy', 'deploy:start_daemons'
+#before 'deploy', 'deploy:stop_daemons'
