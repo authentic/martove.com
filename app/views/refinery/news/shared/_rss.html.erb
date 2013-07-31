@@ -2,7 +2,7 @@
   <h5 class="short_headline"><span>Телеканал ТВі</span></h5>
   <nav>
     <ul id="blogposts" class="blogposts clearfix">
-      <% for entry in FeedEntry.all(:limit => 10, :order => "published_at desc") %>
+      <% for entry in FeedEntry.all(:limit => 7, :order => "published_at desc") %>
 
           <li>
             <span class="date"> <span class="month"><%= Russian::strftime(entry.published_at.to_date, "%e %b") %></span>

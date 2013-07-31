@@ -2,12 +2,7 @@ class FeedEntry < ActiveRecord::Base
   require 'feedzirra'
   attr_accessible :guid, :name, :published_at, :summary, :url
 
-  def self.update_from_feed(feed_url)
-    feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-    add_entries(feed.entries)
-  end
-
-  def self.update_from_feed_continuously(feed_url, delay_interval = 15.minutes)
+  def self.update_from_feed_continuously(feed_url, delay_interval = 5.minutes)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     add_entries(feed.entries)
     loop do
